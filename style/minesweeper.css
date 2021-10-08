@@ -1,0 +1,55 @@
+@import url(/fonts/fonts.css);
+
+:root {
+    --mainfont: LinearSTD;
+}
+
+html {
+    font-family: var(--mainfont), sans-serif;
+    text-transform: lowercase;
+    font-size: 1.5rem;
+    height: 100%;
+}
+html * {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    flex-direction: row;
+}
+header > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-weight: bold;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#selectedItem, .gridCell.o9.show {background-color: red}
+.gridCell.o1.show {background-image: url('/img/minesweeper/one.webp');}
+.gridCell.o2.show {background-image: url('/img/minesweeper/two.webp');}
+.gridCell.o3.show {background-image: url('/img/minesweeper/three.webp');}
+.gridCell.o4.show {background-image: url('/img/minesweeper/four.webp');}
+.gridCell.o5.show {background-image: url('/img/minesweeper/five.webp');}
+.gridCell.o6.show {background-image: url('/img/minesweeper/six.webp');}
+.gridCell.o7.show {background-image: url('/img/minesweeper/seven.webp');}
+.gridCell.o8.show {background-image: url('/img/minesweeper/eight.webp');}
+.gridCell.o9.show {background-image: url('/img/minesweeper/bomb.webp');}
+.gridCell.flag {background-image: url('/img/minesweeper/flag.webp')}
+.gridCell.show {background-color: whitesmoke}
+.gridCell {
+    background: gray no-repeat center;
+    background-size: contain;
+    border: 0.5px solid black;
+}
+main {
+    display: grid;
+}

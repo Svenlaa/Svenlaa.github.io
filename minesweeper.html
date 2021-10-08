@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="icon" type="image/png" sizes="16x16" href="/fav/ico16.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>minesweeper</title>
+
+    <link rel="preload" href="/fonts/LinearStd.css" as="style">
+    <meta name="description" content="minesweeper by svenl.nl">
+    <link rel="stylesheet" href="/style/minesweeper.css">
+
+    <!--Favicon START-->
+        <link rel="manifest" href="/fav/minesweeper/manifest.json">
+        <meta name="theme-color" content="#808080">
+        <meta name="msapplication-TileColor" content="#808080">
+        <link rel="icon" type="image/png" sizes="16x16" href="/fav/minesweeper/ico16.png">
+        <meta name="msapplication-TileImage" content="/fav/minesweeper/ms-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="/fav/minesweeper/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/fav/minesweeper/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/fav/minesweeper/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/fav/minesweeper/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/fav/minesweeper/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/fav/minesweeper/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/fav/minesweeper/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/fav/minesweeper/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/fav/minesweeper/apple-icon-180x180.png">
+    <!--Favicon END-->
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/minesweeper-sw.js')
+        .then(function(registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+        })
+        .catch(function(error) {
+            console.log('Service worker registration failed, error:', error);
+        });
+    }
+</script>
+
+</head>
+<body id="html">
+    <header id="header">
+        <span id="timePlayed">0:00</span>
+        <span id="restart" onclick="window.location = window.location">RESTART</span>
+        <span id="gameState">:|</span>
+        <span id="selectedItem" onclick="_selectFlag()">FLAG</span>
+        <span id="flagLeft">0</span>
+    </header>
+    <main id="main"></main>
+    <script src="/script/minesweeper.js"></script>
+</body>
+</html>

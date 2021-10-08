@@ -1,0 +1,211 @@
+@import url(/fonts/fonts.css);
+:root {
+  --mainfont: LinearSTD;
+}
+#foundation * {
+  transition-duration: 0ms;
+}
+
+#pile * {
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+
+html,body {
+  font-family: var(--mainfont), sans-serif;
+  text-transform: lowercase;
+  margin: 0;
+  font-size: calc(14px + 1vmin);
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #228b22;
+  position: absolute;
+}
+
+footer {
+  display: block;
+  padding: 1rem;
+  background-color: #00000069;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  font-size: 1em;
+  height: 1em;
+  background-color: #00000069;
+  padding: 0.25em 0;
+  color: whitesmoke;
+  top: 0;
+}
+
+header * {
+  color: whitesmoke;
+  flex: 100%;
+  text-align: center;
+}
+
+header #time {color: antiquewhite}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#deck {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+
+#pile { /*PILE.CSS*/
+  flex: 3;
+  display: flex;
+  flex-direction: row;
+}
+
+#pile .stack {
+  list-style: none;
+  padding-inline-start: 0;
+  margin: 0;
+}
+
+#pile #sDown {
+  flex: 1;
+  padding: 0.5vw 0.5vw;
+}
+
+#pile #sDown li:nth-last-of-type(2) {
+  transform: translateY(-100%);
+  height: 100%;
+  display: none;
+}
+#pile #sDown li:last-of-type {
+  height: 100%;
+}
+
+#pile #sUp {
+  flex: 2;
+  padding: 0.5vw 1vw;
+}
+
+#pile #sDown li {height: 0}
+
+#pile #sUp li {
+  width: 0;
+  height: 100%;
+  float: left;
+}
+
+#pile #sUp li:nth-last-child(1),
+#pile #sUp li:nth-last-child(2),
+#pile #sUp li:nth-last-child(3) {
+  width: 25%;
+} /*/ PILE.CSS*/
+
+#foundation {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+}
+
+#foundation .found {
+  flex: 1;
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-inline-start: 0;
+  padding: 0.5vw;
+  margin: 0;
+}
+
+#foundation .found li {height: 0}
+#foundation .found li:last-child {height: 100%}
+
+#field {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+#field .column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-inline-start: 0;
+  padding: 0.5vw;
+  margin: 0;
+}
+
+
+#field .column li {height: calc((100vw / 7 - 1vw) * 1.452 / 3)}
+#field .column li.hiddenCard {height: calc((100vw / 7 - 1vw) * 1.452 / 6)}
+
+
+#pile #sUp img {width: 200%}
+#field img {
+  filter: opacity(1);
+  width: 100%;
+  height: 300%;
+}
+
+#field li.hiddenCard img {
+  filter: opacity(1);
+  width: 100%;
+  height: 600%;
+}
+
+img {
+  filter: opacity(1);
+  width: 100%;
+  height: 100%;
+}
+
+.lowOpacity {filter: opacity(0.2);}
+
+
+#overlay {
+  width: 100%;
+  height: 100%;
+  background-color: #00000069;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: space-around;
+}
+
+#overlay .grid {
+  display: inline;
+  margin: auto auto;
+  background-color: #fff4;
+  height: 50vmin;
+  width: 20vmin;
+  text-align: center;
+}
+#overlay .grid span {
+  align-self: left;
+}
+
+footer {
+  display: flex;
+}
+footer * {
+  flex: 1;
+  text-align: center;
+}
+
+a {color: lightskyblue}
+a:visited {color: salmon}

@@ -1,0 +1,119 @@
+@import url('/fonts/fonts.css');
+
+:root {
+  --confirmColor: forestgreen;
+  --cancelColor: firebrick;
+  --mainfont: LinearSTD;
+}
+
+html,body {
+  font-size: 16px;
+}
+
+*:not(input){
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-family: var(--mainfont), sans-serif;
+  text-transform: lowercase;
+}
+
+#topBar, #inputBar {
+  width: 100%;
+  display: flex;
+  height: 2em;
+  background-color: whitesmoke;
+}
+
+#inputBar {
+  display: none;
+  bottom: 0;
+  position: fixed;
+}
+
+#topBar > *,
+#inputBar > * {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: grey;
+}
+
+#topBar > * > img,
+#inputBar > * > img {
+  height: 2.25em
+}
+
+#topBar > #productName,
+#inputBar > input {
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center;
+}
+
+#inputBar > input {
+  text-align: left;
+  background-color: hsl(0, 0%, 95%);
+}
+
+#sendInput {
+  background-color: var(--confirmColor);
+}
+
+#cancelInput {
+  background-color: var(--cancelColor);
+}
+
+
+#list {
+  width: 100%;
+}
+
+#list li {
+  display: flex;
+  height: 3em;
+  padding: 0 0;
+}
+
+li > * {
+  float: left;
+}
+
+li span {
+  flex: 1;
+  width: 100%;
+  font-size: 1.75rem;
+  padding: 0.5rem;
+}
+
+li .deleteButton {
+  display: none;
+  border-width: 0;
+  margin: 0.25rem;
+  height: 2.5rem;
+  padding: 0.25rem;
+  background-color: firebrick;
+}
+
+.cButton{
+  background-color: #fff;
+  margin: 0.5rem;
+  margin-right: 0;
+  height: 2rem;
+  padding: 0rem;
+  border-radius: 50%;
+  border-style: hidden;
+}
+
+button:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+.cButton img, .deleteButton img {
+  height: 100%;
+}
+
+.crossedItem span{
+  text-decoration: line-through;
+  color: grey;
+}
