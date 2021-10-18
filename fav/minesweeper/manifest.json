@@ -1,7 +1,7 @@
 {
  "name": "minesweeper",
  "short-name": "minesweeper",
- "start_url": "/minesweeper",
+ "start_url": "/minesweeper.html",
  "display": "standalone",
  "background_color": "#808080",
  "theme_color": "#808080",

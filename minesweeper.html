@@ -2,14 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="icon" type="image/png" sizes="16x16" href="/fav/ico16.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>minesweeper</title>
 
-    <link rel="preload" href="/fonts/LinearStd.css" as="style">
     <meta name="description" content="minesweeper by svenl.nl">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="minesweeper" />
+    <meta name="apple-mobile-web-app-title" content="minesweeper" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, shrink-to-fit=no">
+    <meta name="msapplication-starturl" content="/minesweeper.html" />
+
     <link rel="stylesheet" href="/style/minesweeper.css">
 
     <!--Favicon START-->
@@ -31,7 +36,8 @@
 
 <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/minesweeper-sw.js')
+        navigator.serviceWorker
+        .register('/minesweeper-sw.js')
         .then(function(registration) {
             console.log('Registration successful, scope is:', registration.scope);
         })
