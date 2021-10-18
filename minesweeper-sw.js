@@ -38,6 +38,7 @@ const STATIC_CACHE_URLS = [
   "/minesweeper",
   "/script/minesweeper.js",
   "/style/minesweeper.css",
+  "/img/minesweeper/flag.webp",
   "/img/minesweeper/bomb.webp",
   "/img/minesweeper/one.webp",
   "/img/minesweeper/two.webp",
