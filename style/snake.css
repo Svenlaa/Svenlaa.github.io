@@ -1,9 +1,19 @@
-.gridCell:nth-child(even) {background-color: antiquewhite}
-.gridCell:nth-child(odd) {background-color: bisque}
+.gridCell:nth-child(even) {
+  background-color: antiquewhite;
+}
+.gridCell:nth-child(odd) {
+  background-color: bisque;
+}
+
+
+.gridCell {
+  transition-duration: 100ms;
+}
 * {
   margin: 0;
   padding: 0;
 }
+
 main {
   padding: 3vmin;
   display: grid;

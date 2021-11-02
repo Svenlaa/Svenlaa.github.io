@@ -1,4 +1,5 @@
-const fieldSide = 15
+const fieldWidth = 15
+const fieldHeight = 15
 let snake = [[7,5],[7,4],[7,3],[7,2],[7,1]]
 let input = ['o']
 let goMove;
@@ -6,19 +7,19 @@ let buffAmount = 1
 
 
 function setup() {
-  for (let i=0; i < fieldSide * fieldSide;i++) {
+  for (let i=0; i < fieldHeight * fieldWidth;i++) {
     let cell = document.createElement('div')
     cell.id = i
     cell.className = "gridCell"
     document.getElementById('main').appendChild(cell)
   }
-  tomato()
+  tomato(firstTime = true)
   drawSnake()
   goMove = setInterval(moveSnake, 200)
 }
 setup()
 
-for (let i=0; i < fieldSide * fieldSide;i++) {
+for (let i=0; i < fieldHeight * fieldWidth;i++) {
   let cell = document.createElement('div')
   cell.id = i
   cell.className = "gridCell"
@@ -34,19 +35,29 @@ function drawSnake() {
   }
 }
 
+function cellID(pos){
+  return pos[0]*15+pos[1]
+}
+
+function cellPOS(id) {
+  return [Math.floor(id/15),id%15]
+}
+
 function getCellStyle(pos) {
-  return document.getElementById(pos[0]*fieldSide+pos[1]).style
+  return document.getElementById(cellID(pos)).style
 }
 
 function tomato() {
-  getCellStyle(getRandomCell()).backgroundColor = 'tomato'
+  let rCell = getRandomCell()
+  getCellStyle(rCell).backgroundColor = 'tomato'
 }
 
 
 function getRandomCell() {
-  let randomCell = [Math.floor(Math.random()*fieldSide), Math.floor(Math.random()*fieldSide)]
+  let randomCell = [Math.floor(Math.random()*fieldWidth), Math.floor(Math.random()*fieldHeight)]
   let bgColor = getCellStyle(randomCell).backgroundColor
   if (bgColor=='rgb(39, 159, 39)'||bgColor=='tomato'||bgColor=='rgb(34, 139, 34)') {return getRandomCell()}
+  console.log(bgColor)
   return randomCell
 }
 
@@ -58,7 +69,7 @@ function moveSnake() {
   if (input[0] == 'k') {nextCell = [snake[0][0]-1,snake[0][1]]} else // up
   if (input[0] == 'j') {nextCell = [snake[0][0]+1,snake[0][1]]}      // down
   if (input.length>1){input.shift()}
-  if (nextCell[0]>=fieldSide||nextCell[0]<0||nextCell[1]>=fieldSide||nextCell[1]<0) {gameOver()}
+  if (nextCell[0]>=15||nextCell[0]<0||nextCell[1]>=15||nextCell[1]<0) {gameOver()}
   if (getCellStyle(nextCell).backgroundColor=='rgb(39, 159, 39)'){gameOver()}
   snake.unshift(nextCell)
   if (getCellStyle(nextCell).backgroundColor!='tomato') {
