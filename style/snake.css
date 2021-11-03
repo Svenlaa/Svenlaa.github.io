@@ -13,7 +13,7 @@ main {
   grid-template-columns: repeat(15, calc(94vmin/15));
 }
 
-body {display: flex}
+body {display: flex; height: 100%;}
 @media (orientation: landscape) {
   body {flex-direction: row}
   .controls{

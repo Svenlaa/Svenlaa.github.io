@@ -12,7 +12,6 @@ function setup() {
     document.getElementById('main').appendChild(cell)
   }
   tomato()
-  drawSnake()
   goMove = setInterval(moveSnake, 200)
 }
 setup()
@@ -38,6 +37,7 @@ function getCellStyle(pos) {
 }
 
 function tomato() {
+  drawSnake()
   getCellStyle(getRandomCell()).backgroundColor = 'tomato'
 }
 
