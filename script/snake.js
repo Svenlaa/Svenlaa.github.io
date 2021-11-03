@@ -72,15 +72,15 @@ function gameOver() {
 }
 
 document.addEventListener('keydown', function(event) {
-  inputRegister(event.key)
+  inputRegister(event.code)
 });
 
 function inputRegister(k) {
   let direction = null
-  if(k=="h"||k=="a") {direction="h"} else
-  if(k=="l"||k=="d") {direction="l"} else
-  if(k=="k"||k=="w") {direction="k"} else
-  if(k=="j"||k=="s") {direction="j"} 
+  if(k=="KeyH"||k=="KeyA"||k=="ArrowLeft" ) {direction="h"} else
+  if(k=="KeyL"||k=="KeyD"||k=="ArrowRight") {direction="l"} else
+  if(k=="KeyK"||k=="KeyW"||k=="ArrowUp"   ) {direction="k"} else
+  if(k=="KeyJ"||k=="KeyS"||k=="ArrowDown" ) {direction="j"} 
   if (input.length>=3){return}
   let prevInput = input[input.length-1]
   if (
