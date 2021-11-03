@@ -27,8 +27,8 @@ function drawSnake() {
   for (let o = snake.length-buffAmount; o >= 0; o--) {
     let cellStyle = getCellStyle(snake[o])
     if (o==snake.length-buffAmount) {cellStyle.backgroundColor = null; continue}
-    if (o>0) {cellStyle.backgroundColor = '#279f27'; continue}
-    if (o==0) {cellStyle.backgroundColor = '#228b22'}
+    if (o>0) {cellStyle.backgroundColor = 'rgb(39, 159, 39)'; continue}
+    if (o==0) {cellStyle.backgroundColor = 'rgb(34, 139, 34)'}
   }
 }
 
