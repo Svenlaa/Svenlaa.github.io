@@ -7,24 +7,26 @@
 }
 
 main {
-  padding: 3vmin;
+  padding-bottom: 3vmin;
   display: grid;
   grid-template-rows: repeat(15, calc(94vmin/15));
   grid-template-columns: repeat(15, calc(94vmin/15));
 }
 
-body {display: flex; height: 100vh; width: 100vw;}
+body {display: flex; height: 94vh; width: 94vw; padding: 3vmin;}
 @media (orientation: landscape) {
   body {flex-direction: row}
+  main {padding-right: 3vmin}
   .controls{
     width: 100%;
-    height: 100vmin;
+    height: 94vmin;
   }
 }
 @media (orientation: portrait) {
   body {flex-direction: column}
+  main {padding-bottom: 3vmin}
   .controls{
-    width: 100vmin;
+    width: 94vmin;
     height: 100%;
   }
 }
@@ -39,6 +41,14 @@ body {display: flex; height: 100vh; width: 100vw;}
 .controls span.l,
 .controls span.k,
 .controls span.j {
-  background-color: gray;
-  border-radius: 2em;
+  border-radius: 1em;
+  background-color: #3b88c3;
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: contain;
 }
+
+.controls span.h {background-image: url(/img/2b05.png)}
+.controls span.j {background-image: url(/img/2b07.png)}
+.controls span.k {background-image: url(/img/2b06.png)}
+.controls span.l {background-image: url(/img/27a1.png)}
