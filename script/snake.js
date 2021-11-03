@@ -72,7 +72,10 @@ function gameOver() {
 }
 
 document.addEventListener('keydown', function(event) {
-  let k = event.key
+  inputRegister(event.key)
+});
+
+function inputRegister(k) {
   let direction = null
   if(k=="h"||k=="a") {direction="h"} else
   if(k=="l"||k=="d") {direction="l"} else
@@ -84,7 +87,9 @@ document.addEventListener('keydown', function(event) {
     prevInput=="h"&&direction=="l"||
     prevInput=="l"&&direction=="h"||
     prevInput=="k"&&direction=="j"||
-    prevInput=="j"&&direction=="k"
+    prevInput=="j"&&direction=="k"||
+    !input[0]&&direction=="h" ||
+    prevInput==direction
   ) {return}
   if(direction){input.push(direction)}
-});
+}
