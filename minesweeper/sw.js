@@ -35,9 +35,9 @@ function cache(request, response) {
 
 const CACHE_NAME = "V1"
 const STATIC_CACHE_URLS = [
-  "/minesweeper",
-  "/script/minesweeper.js",
-  "/style/minesweeper.css",
+  "/minesweeper/index.html",
+  "/minesweeper/index.css",
+  "/minesweeper/index.js",
   "/img/minesweeper/flag.webp",
   "/img/minesweeper/bomb.webp",
   "/img/minesweeper/one.webp",

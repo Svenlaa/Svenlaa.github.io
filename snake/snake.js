@@ -30,7 +30,11 @@ function setup() {
   goMove = setInterval(moveSnake, 150)
 } setup()
 
-function gameOver() {clearInterval(goMove)}
+function gameOver() {
+  clearInterval(goMove)
+  window.alert("Your snake was " + (snake.length-1).toString()+" tiles long!")
+  window.location = window.location
+}
 
 //listens for keydown event
 document.addEventListener('keydown', function(event) {inputRegister(event.code)})
@@ -49,7 +53,7 @@ function inputRegister(k) {
     prevInput=="left"&&direction=="right"||
     prevInput=="up"&&direction=="down"||
     prevInput=="down"&&direction=="up"||
-    !input[0]&&direction=="h" || // special case for game init
+    !input[0]&&direction=="left" || // special case for game init
     prevInput==direction
   ) {return}
   if(direction){input.push(direction)}

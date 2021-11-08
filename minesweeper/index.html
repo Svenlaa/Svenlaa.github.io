@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, shrink-to-fit=no">
     <meta name="msapplication-starturl" content="/minesweeper.html" />
 
-    <link rel="stylesheet" href="/style/minesweeper.css">
+    <link rel="stylesheet" href="index.css">
 
     <!--Favicon START-->
         <link rel="manifest" href="/fav/minesweeper/manifest.json">
@@ -37,7 +37,7 @@
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-        .register('/minesweeper-sw.js')
+        .register('sw.js')
         .then(function(registration) {
             console.log('Registration successful, scope is:', registration.scope);
         })
@@ -57,6 +57,6 @@
         <span id="flagLeft">0</span>
     </header>
     <main id="main"></main>
-    <script src="/script/minesweeper.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
