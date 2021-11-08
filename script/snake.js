@@ -1,44 +1,9 @@
 const fieldSide = 15
 let snake = [[7,5],[7,4],[7,3],[7,2],[7,1]]
 let input = []
-let goMove;
-let buffAmount = 1
-
-function setup() {
-  for (let i=0; i < fieldSide * fieldSide;i++) {
-    let cell = document.createElement('div')
-    cell.id = i
-    cell.className = "gridCell"
-    document.getElementById('main').appendChild(cell)
-  }
-  tomato()
-  goMove = setInterval(moveSnake, 200)
-}
-setup()
-
-for (let i=0; i < fieldSide * fieldSide;i++) {
-  let cell = document.createElement('div')
-  cell.id = i
-  cell.className = "gridCell"
-  document.getElementById('main').appendChild(cell)
-}
-
-function drawSnake() {
-  for (let o = snake.length-buffAmount; o >= 0; o--) {
-    let cellStyle = getCellStyle(snake[o])
-    if (o==snake.length-buffAmount) {cellStyle.backgroundColor = null; continue}
-    if (o>0) {cellStyle.backgroundColor = 'rgb(39, 159, 39)'; continue}
-    if (o==0) {cellStyle.backgroundColor = 'rgb(34, 139, 34)'}
-  }
-}
 
 function getCellStyle(pos) {
   return document.getElementById(pos[0]*fieldSide+pos[1]).style
-}
-
-function tomato() {
-  drawSnake()
-  getCellStyle(getRandomCell()).backgroundColor = 'tomato'
 }
 
 function getRandomCell() {
@@ -48,48 +13,70 @@ function getRandomCell() {
   return randomCell
 }
 
-function moveSnake() {
+function spawnTomato() {
   drawSnake()
-  let nextCell = null
-  if (input[0] == 'h') {nextCell = [snake[0][0],snake[0][1]-1]} else // left
-  if (input[0] == 'l') {nextCell = [snake[0][0],snake[0][1]+1]} else // right
-  if (input[0] == 'k') {nextCell = [snake[0][0]-1,snake[0][1]]} else // up
-  if (input[0] == 'j') {nextCell = [snake[0][0]+1,snake[0][1]]}      // down
-  if (input.length>1){input.shift()}
-  if (nextCell[0]>=fieldSide||nextCell[0]<0||nextCell[1]>=fieldSide||nextCell[1]<0) {gameOver()}
-  if (getCellStyle(nextCell).backgroundColor=='rgb(39, 159, 39)'){gameOver()}
-  snake.unshift(nextCell)
-  if (getCellStyle(nextCell).backgroundColor!='tomato') {
-    snake.pop()
-  } else {tomato()}
-  drawSnake()
+  getCellStyle(getRandomCell()).backgroundColor = 'tomato'
 }
 
-function gameOver() {
-  clearInterval(goMove);
-  window.alert("Your length was "+(snake.length-buffAmount)+"!");
-  window.location=window.location
-}
+let goMove;
+function setup() {
+  for (let i=0; i < fieldSide * fieldSide;i++) {
+    let cell = document.createElement('div')
+    cell.id = i
+    cell.className = "gridCell"
+    document.getElementById('main').appendChild(cell)
+  }
+  spawnTomato()
+  goMove = setInterval(moveSnake, 150)
+} setup()
 
-document.addEventListener('keydown', function(event) {
-  inputRegister(event.code)
-});
+function gameOver() {clearInterval(goMove)}
 
+//listens for keydown event
+document.addEventListener('keydown', function(event) {inputRegister(event.code)})
+
+//handles the input, from touch or keyboard
 function inputRegister(k) {
   let direction = null
-  if(k=="KeyH"||k=="KeyA"||k=="ArrowLeft" ) {direction="h"} else
-  if(k=="KeyL"||k=="KeyD"||k=="ArrowRight") {direction="l"} else
-  if(k=="KeyK"||k=="KeyW"||k=="ArrowUp"   ) {direction="k"} else
-  if(k=="KeyJ"||k=="KeyS"||k=="ArrowDown" ) {direction="j"} 
+  if(k=="KeyH"||k=="KeyA"||k=="ArrowLeft" ) {direction="left"} else
+  if(k=="KeyL"||k=="KeyD"||k=="ArrowRight") {direction="right"} else
+  if(k=="KeyK"||k=="KeyW"||k=="ArrowUp"   ) {direction="up"} else
+  if(k=="KeyJ"||k=="KeyS"||k=="ArrowDown" ) {direction="down"} 
   if (input.length>=3){return}
   let prevInput = input[input.length-1]
   if (
-    prevInput=="h"&&direction=="l"||
-    prevInput=="l"&&direction=="h"||
-    prevInput=="k"&&direction=="j"||
-    prevInput=="j"&&direction=="k"||
-    !input[0]&&direction=="h" ||
+    prevInput=="right"&&direction=="left"||
+    prevInput=="left"&&direction=="right"||
+    prevInput=="up"&&direction=="down"||
+    prevInput=="down"&&direction=="up"||
+    !input[0]&&direction=="h" || // special case for game init
     prevInput==direction
   ) {return}
   if(direction){input.push(direction)}
+}
+
+function drawSnake() {
+  for (let o = 1; o <= snake.length; o++) {
+    let cellStyle = getCellStyle(snake[o-1])
+    if (o==1) {cellStyle.backgroundColor = 'rgb(34, 139, 34)';continue}
+    else if (o >= snake.length) {
+      if(cellStyle.backgroundColor!='tomato'){cellStyle.backgroundColor = null;} // if not tomato, is blank
+    }
+    else if (o>1) {cellStyle.backgroundColor = 'rgb(39, 159, 39)';}
+  }
+}
+
+function moveSnake() {
+  let nextCell = null
+  if (input[0] == 'left') {nextCell = [snake[0][0],snake[0][1]-1]} else
+  if (input[0] == 'right') {nextCell = [snake[0][0],snake[0][1]+1]} else
+  if (input[0] == 'up') {nextCell = [snake[0][0]-1,snake[0][1]]} else
+  if (input[0] == 'down') {nextCell = [snake[0][0]+1,snake[0][1]]}
+  if (input.length>1){input.shift()} //Trims inputList
+  if (nextCell[0]>=fieldSide||nextCell[0]<0||nextCell[1]>=fieldSide||nextCell[1]<0){gameOver();return} //Wall is hit
+  if (getCellStyle(nextCell).backgroundColor=='rgb(39, 159, 39)'){gameOver();return} //Body is hit
+  if (getCellStyle(nextCell).backgroundColor!='tomato'){snake.pop()}
+  else {spawnTomato()}
+  snake.unshift(nextCell)
+  drawSnake()
 }
