@@ -1,7 +1,6 @@
 const fieldSide = 15
 let snake = [[7,5],[7,4],[7,3],[7,2],[7,1]]
 let input = []
-let test = "test"
 function getCellStyle(pos) {
   return document.getElementById(pos[0]*fieldSide+pos[1]).style
 }
@@ -27,7 +26,7 @@ function setup() {
     document.getElementById('main').appendChild(cell)
   }
   spawnTomato()
-  goMove = setInterval(moveSnake, 150)
+  goMove = setInterval(moveSnake, 200)
 } setup()
 
 function gameOver() {
