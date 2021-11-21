@@ -2,12 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>Svenla snake</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <meta name="description" content="snake on Svenla.com">
-  <link rel="stylesheet" href="snake.css">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="theme-color" content="#666">
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="manifest" href="index.webmanifest">
+  <link rel="icon" href="fav/fav.ico">
+
+  <!--Apple Favicons-->
+  <link rel="apple-touch-icon" sizes="57x57" href="fav/57x.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="fav/50x.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="fav/72x.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="fav/76x.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="fav/114x.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="fav/120x.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="fav/144x.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="fav/152x.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="fav/180x.png">
+  <link rel="apple-touch-icon" sizes="192x192" href="fav/192x.png">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+      .register('sw.js')
+      .then(function(registration) {
+        console.log('Registration successful, scope is:', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('Service worker registration failed, error:', error);
+      });
+    }
+  </script>
 </head>
 <body>
   <main id="main"></main>
@@ -22,6 +51,6 @@
     <span onclick="inputRegister('KeyJ')" class="j"></span>
     <span></span>
   </div>
-  <script src="snake.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>

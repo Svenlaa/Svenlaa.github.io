@@ -1,7 +1,7 @@
 const fieldSide = 15
 let snake = [[7,5],[7,4],[7,3],[7,2],[7,1]]
 let input = []
-
+let test = "test"
 function getCellStyle(pos) {
   return document.getElementById(pos[0]*fieldSide+pos[1]).style
 }
@@ -76,6 +76,7 @@ function moveSnake() {
   if (input[0] == 'right') {nextCell = [snake[0][0],snake[0][1]+1]} else
   if (input[0] == 'up') {nextCell = [snake[0][0]-1,snake[0][1]]} else
   if (input[0] == 'down') {nextCell = [snake[0][0]+1,snake[0][1]]}
+  if (!input[0]){return} // return if no input
   if (input.length>1){input.shift()} //Trims inputList
   if (nextCell[0]>=fieldSide||nextCell[0]<0||nextCell[1]>=fieldSide||nextCell[1]<0){gameOver();return} //Wall is hit
   if (getCellStyle(nextCell).backgroundColor=='rgb(39, 159, 39)'){gameOver();return} //Body is hit

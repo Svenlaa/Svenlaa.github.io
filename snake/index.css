@@ -1,5 +1,5 @@
-.gridCell:nth-child(even) {background-color: antiquewhite}
-.gridCell:nth-child(odd) {background-color: bisque}
+.gridCell:nth-child(even) {background-color: #bebbb8}
+.gridCell:nth-child(odd) {background-color: #c8c6c4}
 
 * {
   margin: 0;
@@ -12,6 +12,8 @@ main {
   grid-template-rows: repeat(15, calc(94vmin/15));
   grid-template-columns: repeat(15, calc(94vmin/15));
 }
+
+body {background-color: #666}
 
 body {display: flex; height: 94vh; width: 94vw; padding: 3vmin;}
 @media (orientation: landscape) {
@@ -48,7 +50,7 @@ body {display: flex; height: 94vh; width: 94vw; padding: 3vmin;}
   background-size: contain;
 }
 
-.controls span.h {background-image: url(/img/2b05.png)}
-.controls span.j {background-image: url(/img/2b07.png)}
-.controls span.k {background-image: url(/img/2b06.png)}
-.controls span.l {background-image: url(/img/27a1.png)}
+.controls span.h {background-image: url(img/2b05.png)}
+.controls span.j {background-image: url(img/2b07.png)}
+.controls span.k {background-image: url(img/2b06.png)}
+.controls span.l {background-image: url(img/27a1.png)}
