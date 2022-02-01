@@ -1,6 +1,19 @@
 const fieldSide = 15
 let snake = [[7,5],[7,4],[7,3],[7,2],[7,1]]
 let input = []
+let goMove;
+
+function setup() {
+  for (let i=0; i < fieldSide * fieldSide;i++) {
+    let cell = document.createElement('div')
+    cell.id = i
+    cell.className = "gridCell"
+    document.getElementById('field').appendChild(cell)
+  }
+  spawnTomato()
+  goMove = setInterval(moveSnake, 200)
+} setup()
+
 function getCellStyle(pos) {
   return document.getElementById(pos[0]*fieldSide+pos[1]).style
 }
@@ -16,18 +29,6 @@ function spawnTomato() {
   drawSnake()
   getCellStyle(getRandomCell()).backgroundColor = 'tomato'
 }
-
-let goMove;
-function setup() {
-  for (let i=0; i < fieldSide * fieldSide;i++) {
-    let cell = document.createElement('div')
-    cell.id = i
-    cell.className = "gridCell"
-    document.getElementById('main').appendChild(cell)
-  }
-  spawnTomato()
-  goMove = setInterval(moveSnake, 200)
-} setup()
 
 function gameOver() {
   clearInterval(goMove)

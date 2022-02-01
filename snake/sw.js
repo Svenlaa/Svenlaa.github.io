@@ -33,7 +33,7 @@ function cache(request, response) {
     .then(cache => cache.put(request, response.clone()));
 }
 
-const CACHE_NAME = "V1"
+const CACHE_NAME = "V1.1"
 const STATIC_CACHE_URLS = [
   "/snake/index.html",
   "/snake/index.css",
