@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <title>Lettest | Svenla</title>
+    <link rel="stylesheet" href="/style/global.css">
+
+    <link rel="shortcut icon" href="/fav/default/fav.ico" type="image/x-icon">
+    <script src="/script/cookie.js" defer></script>
+    <script src="index.js" defer></script>
+    <script src="/script/clock.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/style/cookie.css">
+</head>
+<body onload="newTurn()">
+    <span id="time" class="smallText"></span>
+    <span id="winPercent" class="smallText"></span>
+
+    <div id="cookieBannerContainer">
+        <div id="cookieBanner">
+            <h2>We use cookies</h2>
+            <p>I am legally required to inform you that this website uses functional cookies.</p>
+            <p>These cookies are used in order to save scores, or remembering that you have seen this banner. This way, you get a better experience. We don't store any personal data, nor are cookies transferred to us. Only the browser you are using right now has access to these cookies.</p>
+            <p><a class="external" href="https://www.learn-about-cookies.com/" target="_blank">Learn more about cookies</a></p>
+            <button id="cookieAccept" onclick="acceptCookies(['FUN'])">I understand.</button>
+        </div>
+    </div>
+
+    <div class="wrong result">&#10008; wrong</div>
+    <div class="correct result">&#10004; correct</div>
+
+    <main>
+        <div class="field">
+            <div class="letterContainer">
+                <span class="l">A</span>
+                <span>to</span>
+                <span class="l">B</span>
+            </div>
+        </div>
+        <button class="leftButton" onclick="sla_button('BEFORE')">BEFORE</button>
+        <button class="rightButton" onclick="sla_button('AFTER')">AFTER</button>
+    </main>
+</body>
+</html>

@@ -1,0 +1,76 @@
+html, body {width: 100vw; height: 100vh; font-family: "Roboto", sans-serif}
+* {margin: 0; padding: 0}
+
+main {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 70% 30%;
+}
+
+.smallText {
+    top: 0;
+    position: fixed;
+    background-color: #0005;
+}
+
+#time {
+    left: 0;
+    border-bottom-right-radius: .3em;
+}
+
+#winPercent {
+    right: 0;
+    border-bottom-left-radius: .3em
+}
+
+.result {
+    text-align: center;
+    position: absolute;
+    width: 40%;
+    left: Calc(30% - 0.5em);
+    font-size: 2em;
+    padding: 0.2em 0.5em 0.3em 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
+    display: none;
+}
+.correct.result {background-color: forestgreen}
+.wrong.result {background-color: crimson}
+
+.field {
+    grid-column: span 2;
+    background-color: #c8c6c4;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.letterContainer {
+    width: 80vmin;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.letterContainer * {
+    text-align: center;
+    margin-top: auto;
+
+    line-height: 40vw;
+    font-size: 10vw;
+}
+
+.letterContainer .l {
+    font-size: 40vmin;
+    font-weight: 600;
+}
+
+main button {
+    border: #000 solid 1px;
+    font-size: 7vw;
+}
+main button:hover {filter: brightness(95%)}
+main button:active {filter: brightness(80%)}
+

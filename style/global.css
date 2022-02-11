@@ -1,0 +1,9 @@
+a.external::after {
+    background-image: url("/img/icon/external.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: '';
+    padding-right: 1em;
+}
+
+*:not(.legal) {text-transform: lowercase}
