@@ -23,8 +23,7 @@ function sla_button(input) {
     let resultBanners = document.getElementsByClassName('result');
     for (let resultBanner of resultBanners) {resultBanner.style.display = 'none';}
     document.getElementsByClassName("result")[isCorrect+0].style.display='inherit';
-    let stats;
-    stats = isCorrect ? WINS+=1: LOSS+=1;
+    let stats = isCorrect ? WINS+=1: LOSS+=1;
     setCookie("FUN", isCorrect ? "Lettest_WINS": "Lettest_LOSS", stats, 365);
     document.getElementById('winPercent').innerHTML = "&nbsp;."+(WINS/(WINS+LOSS)*100).toFixed(0)+"&#127942;"
     newTurn()

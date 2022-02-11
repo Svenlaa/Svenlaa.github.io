@@ -6,4 +6,4 @@ a.external::after {
     padding-right: 1em;
 }
 
-*:not(.legal) {text-transform: lowercase}
+* {text-transform: lowercase}
