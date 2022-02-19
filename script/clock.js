@@ -15,9 +15,9 @@ function clock() {
     if (m>=15) {
         m/15<3? cN+=12: cN!==47? cN+=1: cN-11
     }
-    let c = "&#1283"+cN+";" // final emoji code
+    let c = `&#1283${cN};` // final emoji code
 
-    document.getElementById("time").innerHTML = c+pad(h)+":"+pad(m)+"&nbsp;"
+    document.getElementById("time").innerHTML = `${c+pad(h)}:${pad(m)}&nbsp`
 }
 let everySecond = true;
 const TickTock = setInterval(clock, 1000);

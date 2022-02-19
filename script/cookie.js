@@ -12,8 +12,8 @@ function setCookie(level, cookie_name, cookie_value, expiration) {
     if(level.toUpperCase()!=="FUN") {return}
     const d = new Date();
     d.setTime(d.getTime() + (expiration*24*60*60*1000));
-    let expires = "expires="+ d.toUTCString();
-    document.cookie = cookie_name + "=" + cookie_value + ";" + expires + ";path=/";
+    let expires = `expires=${d.toUTCString()}`
+    document.cookie = `${cookie_name}=${cookie_value};${expires};path=/";`
 }
 
 function getCookie(cookie_name) {

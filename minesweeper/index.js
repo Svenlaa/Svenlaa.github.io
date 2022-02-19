@@ -1,4 +1,5 @@
 document.oncontextmenu = (()=>!1);
+function pad (n) {return n.toString().padStart(2,"0")}
 const selectID = document.getElementById("selectedItem")
   , headerID = document.getElementById("header")
   , flagsID = document.getElementById("flagLeft")
@@ -17,9 +18,7 @@ let xCells = 0
 function updateTime() {
     let e = ++timePlayed % 60
       , l = Math.floor(timePlayed / 60);
-    document.getElementById("timePlayed").innerHTML = l + ":" + e.toLocaleString(!0, {
-        minimumIntegerDigits: 2
-    })
+    document.getElementById("timePlayed").innerHTML = `${l}:${pad(e)}`
 }
 function cellClick(e, l) {
     let t = e.classList
@@ -64,8 +63,8 @@ function drawCells(e) {
     cellSize = mainEle.offsetWidth / xCells,
     yCells = Math.floor(mainEle.offsetHeight / cellSize);
     const l = xCells * yCells;
-    mainEle.style.gridTemplateColumns = "repeat(" + xCells + "," + cellSize + "px)",
-    mainEle.style.gridTemplateRows = "repeat(" + yCells + "," + cellSize + "px)",
+    mainEle.style.gridTemplateColumns = `repeat(${xCells}, ${cellSize}px)`,
+    mainEle.style.gridTemplateRows = `repeat(${yCells}, ${cellSize}px)`,
     headerID.style.height = "100%",
     mainEle.style.height = "auto",
     totalBombs = Math.floor(xCells * yCells * e);

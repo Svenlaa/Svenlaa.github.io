@@ -14,14 +14,15 @@ function setup() {
   goMove = setInterval(moveSnake, 200)
 } setup()
 
-function getCellStyle(pos) {
+function getCellStyle(pos, bgColor) {
+  if (bgColor) {return document.getElementById(pos[0]*fieldSide+pos[1]).style.backgroundColor}
   return document.getElementById(pos[0]*fieldSide+pos[1]).style
 }
 
 function getRandomCell() {
   let randomCell = [Math.floor(Math.random()*fieldSide), Math.floor(Math.random()*fieldSide)]
-  let bgColor = getCellStyle(randomCell).backgroundColor
-  if (bgColor=='rgb(39, 159, 39)'||bgColor=='tomato'||bgColor=='rgb(34, 139, 34)') {return getRandomCell()}
+  let bgColor = getCellStyle(randomCell, true)
+  if (['rgb(39, 159, 39)', 'tomato', 'rgb(34, 139, 34)'].includes(bgColor)) {return getRandomCell()}
   return randomCell
 }
 
@@ -32,7 +33,7 @@ function spawnTomato() {
 
 function gameOver() {
   clearInterval(goMove)
-  window.alert("Your snake was " + (snake.length-1).toString()+" tiles long!")
+  window.alert(`Your snake was ${(snake.length-1)} tiles long!`)
   window.location = window.location
 }
 
@@ -42,10 +43,10 @@ document.addEventListener('keydown', function(event) {inputRegister(event.code)}
 //handles the input, from touch or keyboard
 function inputRegister(k) {
   let direction = null
-  if(k=="KeyH"||k=="KeyA"||k=="ArrowLeft" ) {direction="left"} else
-  if(k=="KeyL"||k=="KeyD"||k=="ArrowRight") {direction="right"} else
-  if(k=="KeyK"||k=="KeyW"||k=="ArrowUp"   ) {direction="up"} else
-  if(k=="KeyJ"||k=="KeyS"||k=="ArrowDown" ) {direction="down"} 
+  if(["KeyH","KeyA","ArrowLeft"].includes(k)) {direction="left"} else
+  if(["KeyL","KeyD","ArrowRight"].includes(k)) {direction="right"} else
+  if(["KeyK","KeyW","ArrowUp"].includes(k)) {direction="up"} else
+  if(["KeyJ","KeyS","ArrowDown"].includes(k)) {direction="down"} 
   if (input.length>=3){return}
   let prevInput = input[input.length-1]
   if (
@@ -76,12 +77,11 @@ function moveSnake() {
   if (input[0] == 'right') {nextCell = [snake[0][0],snake[0][1]+1]} else
   if (input[0] == 'up') {nextCell = [snake[0][0]-1,snake[0][1]]} else
   if (input[0] == 'down') {nextCell = [snake[0][0]+1,snake[0][1]]}
-  if (!input[0]){return} // return if no input
+  if (!input[0]){return}
   if (input.length>1){input.shift()} //Trims inputList
   if (nextCell[0]>=fieldSide||nextCell[0]<0||nextCell[1]>=fieldSide||nextCell[1]<0){gameOver();return} //Wall is hit
-  if (getCellStyle(nextCell).backgroundColor=='rgb(39, 159, 39)'){gameOver();return} //Body is hit
-  if (getCellStyle(nextCell).backgroundColor!='tomato'){snake.pop()}
-  else {spawnTomato()}
+  if (getCellStyle(nextCell, true)=='rgb(39, 159, 39)'){gameOver();return} //Body is hit
+  getCellStyle(nextCell, true)!='tomato' ? snake.pop() : spawnTomato();
   snake.unshift(nextCell)
   drawSnake()
 }
