@@ -13,17 +13,22 @@
     <script src="/script/twodo.js" defer></script>
 </head>
 <body>
-    <header id="topBar">
-        <button id="logo" onclick="window.location='/'" aria-label="logo"><img src="/fav/default/ico72.png" alt="logo"></button>
-        <span id="productName">two-do</span>
-        <button id="newBut" onclick="addNew()" aria-label="add item"><img src="/img/icon/common-file-add.png" alt="add item"></button>
-        <button id="delBut" onclick="delItems()" aria-label="delete items"><img src="/img/icon/bin-2.png" alt="delete items"></button>
-    </header>
-    <ul id="list"></ul>
-    <div id="inputBar">
-        <input id="itemInput" type="text" placeholder="Start Typing..." autofocus>
-        <button id="sendInput" onclick="confirmItem(true)" aria-label="SEND"><img src="/img/icon/check-1.png" alt="SEND"></button>
-        <button id="cancelInput" onclick="confirmItem(false)" aria-label="CANCEL"><img src="/img/icon/close.png" alt="CANCEL"></button>
-    </div>
+<header id="topBar">
+    <button id="logo" onclick="window.location='/'" aria-label="logo"><img src="/fav/default/ico72.png" alt="logo">
+    </button>
+    <span id="productName">two-do</span>
+    <button id="newBut" onclick="addNew()" aria-label="add item"><img src="/img/icon/common-file-add.png"
+                                                                      alt="add item"></button>
+    <button id="delBut" onclick="delItems()" aria-label="delete items"><img src="/img/icon/bin-2.png"
+                                                                            alt="delete items"></button>
+</header>
+<ul id="list"></ul>
+<div id="inputBar">
+    <input id="itemInput" type="text" placeholder="Start Typing..." autofocus>
+    <button id="sendInput" onclick="confirmItem(true)" aria-label="SEND"><img src="/img/icon/check-1.png" alt="SEND">
+    </button>
+    <button id="cancelInput" onclick="confirmItem(false)" aria-label="CANCEL"><img src="/img/icon/close.png"
+                                                                                   alt="CANCEL"></button>
+</div>
 </body>
 </html>

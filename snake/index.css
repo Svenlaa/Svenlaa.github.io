@@ -1,72 +1,104 @@
-.gridCell:nth-child(even) {background-color: #bebbb8}
-.gridCell:nth-child(odd) {background-color: #c8c6c4}
+.gridCell:nth-child(even) {
+    background-color: #bebbb8
+}
+
+.gridCell:nth-child(odd) {
+    background-color: #c8c6c4
+}
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  display: flex;
-  height: 94vh;
-  width: 94vw;
-  padding: 3vmin;
-  gap: 3vmin;
-  background-color: #666
+    display: flex;
+    height: 94vh;
+    width: 94vw;
+    padding: 3vmin;
+    gap: 3vmin;
+    background-color: #666
 }
 
 @media (orientation: landscape) {
-  body {flex-direction: row}
-  .controls {width: 100%;}
-  #field {width: 100%;}
+    body {
+        flex-direction: row
+    }
+
+    .controls {
+        width: 100%;
+    }
+
+    #field {
+        width: 100%;
+    }
 }
 
 @media (orientation: portrait) {
-  body {flex-direction: column}
-  .controls {height: 100%;}
-  #field {height: 100%;}
+    body {
+        flex-direction: column
+    }
+
+    .controls {
+        height: 100%;
+    }
+
+    #field {
+        height: 100%;
+    }
 }
 
 main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .controlWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .controls {
-  aspect-ratio: 1;
-  display: grid;
-  grid-template-columns: repeat(3, calc(100%/3));
-  grid-template-rows: repeat(3, calc(100%/3));
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+    grid-template-rows: repeat(3, calc(100% / 3));
 }
 
 #field {
-  aspect-ratio: 1;
-  display: grid;
-  grid-template-columns: repeat(15, calc(100%/15));
-  grid-template-rows: repeat(15, calc(100%/15));
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(15, calc(100% / 15));
+    grid-template-rows: repeat(15, calc(100% / 15));
 }
 
 .controls span.h,
 .controls span.l,
 .controls span.k,
 .controls span.j {
-  border-radius: 1em;
-  background-color: #3b88c3;
-  background-repeat:no-repeat;
-  background-position: center;
-  background-size: contain;
+    border-radius: 1em;
+    background-color: #3b88c3;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
-.controls span.h {background-image: url(img/2b05.png)}
-.controls span.j {background-image: url(img/2b07.png)}
-.controls span.k {background-image: url(img/2b06.png)}
-.controls span.l {background-image: url(img/27a1.png)}
+.controls span.h {
+    background-image: url(img/2b05.png)
+}
+
+.controls span.j {
+    background-image: url(img/2b07.png)
+}
+
+.controls span.k {
+    background-image: url(img/2b06.png)
+}
+
+.controls span.l {
+    background-image: url(img/27a1.png)
+}

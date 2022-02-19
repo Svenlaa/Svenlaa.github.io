@@ -1,5 +1,13 @@
-html, body {width: 100vw; height: 100vh; font-family: "Roboto", sans-serif}
-* {margin: 0; padding: 0}
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Roboto", sans-serif
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
 
 main {
     height: 100%;
@@ -23,8 +31,14 @@ main {
     border-radius: 0 0 0.5em 0.5em;
     display: none;
 }
-.correct.result {background-color: forestgreen}
-.wrong.result {background-color: crimson}
+
+.correct.result {
+    background-color: forestgreen
+}
+
+.wrong.result {
+    background-color: crimson
+}
 
 .field {
     grid-column: span 2;
@@ -59,6 +73,12 @@ main button {
     border: #000 solid 1px;
     font-size: 7vw;
 }
-main button:hover {filter: brightness(95%)}
-main button:active {filter: brightness(80%)}
+
+main button:hover {
+    filter: brightness(95%)
+}
+
+main button:active {
+    filter: brightness(80%)
+}
 

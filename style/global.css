@@ -1,5 +1,8 @@
 @import url(/fonts/fonts.css);
-body {font-size: 1.2em}
+
+body {
+    font-size: 1.2em
+}
 
 a.external::after {
     background-image: url("/img/icon/external.png");

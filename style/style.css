@@ -1,10 +1,17 @@
 @import url(/fonts/fonts.css);
+
 :root {
     --mainfont: LinearSTD;
 }
 
-*{font-family: var(--mainfont), sans-serif; text-transform: lowercase}
-html,body,header {margin: 0}
+* {
+    font-family: var(--mainfont), sans-serif;
+    text-transform: lowercase
+}
+
+html, body, header {
+    margin: 0
+}
 
 main {
     padding-bottom: 4rem;
@@ -12,11 +19,16 @@ main {
 }
 
 /*Hide Scrollbar*/
-main h1 {text-align: center}
-h1, h2, h3, h4, h5, h6 {font-family: var(--mainfont), monospace}
+main h1 {
+    text-align: center
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--mainfont), monospace
+}
 
 header {
-    background-image: linear-gradient(#f9f9fb,  #ffffff);
+    background-image: linear-gradient(#f9f9fb, #ffffff);
     border-radius: 1rem 1rem 0px 0px;
     display: flex;
     height: 4rem;
@@ -26,6 +38,7 @@ header {
     width: 100vw;
     bottom: 0;
 }
+
 header span {
     font-family: var(--mainfont), sans-serif;
     padding: 0.675rem;
@@ -34,20 +47,29 @@ header span {
     margin: auto 0 auto 0;
     font-weight: lighter;
     width: 100%;
-} 
+}
+
 header img {
     width: auto;
     border-radius: 0;
     cursor: pointer;
 }
+
 header img.navButton, header span.empty {
     width: 48px;
     padding: 0.5rem;
     flex-shrink: 0;
 }
+
 header img.menuButton {
     width: 2rem;
     padding: 1rem 0.5rem;
-} 
-header img.menuButton:last-of-type {padding-right: 1rem}
-header img.menuButton:first-of-type {padding-left: 1rem}
+}
+
+header img.menuButton:last-of-type {
+    padding-right: 1rem
+}
+
+header img.menuButton:first-of-type {
+    padding-left: 1rem
+}

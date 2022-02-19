@@ -1,52 +1,53 @@
 @import url('/fonts/fonts.css');
 
 :root {
-  --mainfont: LinearSTD;
+    --mainfont: LinearSTD;
 }
 
 .category.b, .card.b {
-  background-image: linear-gradient(to bottom right, hsl(240, 100%, 30%), hsl(240, 100%, 25%));
+    background-image: linear-gradient(to bottom right, hsl(240, 100%, 30%), hsl(240, 100%, 25%));
 }
 
 .category.g, .card.g {
-  background-image: linear-gradient(to bottom right, hsl(120, 100%, 25%), hsl(120, 100%, 19%));
+    background-image: linear-gradient(to bottom right, hsl(120, 100%, 25%), hsl(120, 100%, 19%));
 }
+
 .category.r, .card.b {
-  background-image: linear-gradient(to bottom right, #a20000, #800000);
+    background-image: linear-gradient(to bottom right, #a20000, #800000);
 }
 
 .category.tr, .card.tr {
-  background-image: linear-gradient(to bottom right, #0000, #0000);
-  border-color: #0000;
-  color: #0000;
+    background-image: linear-gradient(to bottom right, #0000, #0000);
+    border-color: #0000;
+    color: #0000;
 }
 
 .card:hover,
 .card:focus {
-  background-color: #0003;
-  color: #e6e6e6;
+    background-color: #0003;
+    color: #e6e6e6;
 }
 
 .card {
-  color: whitesmoke;
-  display: inline-block;
-  font-size: 3.125em;
-  font-family: var(--mainfont) , sans-serif;
-  text-align: center;
-  border-radius: 0;
-  margin: 0em;
-  border-style: solid;
-  border-color: #00000069;
-  border-width: 0.05rem;
-  padding: 0.1em 0.3em;
+    color: whitesmoke;
+    display: inline-block;
+    font-size: 3.125em;
+    font-family: var(--mainfont), sans-serif;
+    text-align: center;
+    border-radius: 0;
+    margin: 0em;
+    border-style: solid;
+    border-color: #00000069;
+    border-width: 0.05rem;
+    padding: 0.1em 0.3em;
 }
 
 .category {
-  display: flex;
-  flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
 .category .card {
-  flex: 1;
+    flex: 1;
 }
