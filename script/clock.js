@@ -1,5 +1,5 @@
 //Add Clock.css to <head>
-const head = document.getElementsByTagName("head")[0]
+head = document.getElementsByTagName("head")[0]
 let cssLink = document.createElement("link")
 cssLink.rel = "stylesheet"
 cssLink.type = "text/css"
@@ -7,7 +7,7 @@ cssLink.href = "/style/clock.css"
 head.appendChild(cssLink)
 
 //Add Clock Element to <body>
-const body = document.getElementsByTagName("body")[0]
+body = document.getElementsByTagName("body")[0]
 let clockElement = document.createElement("span")
 clockElement.id = "clock"
 clockElement.classList.add("smallText")

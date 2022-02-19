@@ -1,12 +1,18 @@
+@import url(/fonts/fonts.css);
+body {font-size: 1.2em}
+
 a.external::after {
     background-image: url("/img/icon/external.png");
     background-size: contain;
     background-repeat: no-repeat;
-    content: '';
-    padding-right: 1em;
+    content: '__';
+    color: #0000;
 }
 
-* {text-transform: lowercase}
+* {
+    font-family: var(--mainfont), sans-serif;
+    text-transform: lowercase;
+}
 
 .smallText {
     top: 0;
