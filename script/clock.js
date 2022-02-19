@@ -1,3 +1,18 @@
+//Add Clock.css to <head>
+const head = document.getElementsByTagName("head")[0]
+let cssLink = document.createElement("link")
+cssLink.rel = "stylesheet"
+cssLink.type = "text/css"
+cssLink.href = "/style/clock.css"
+head.appendChild(cssLink)
+
+//Add Clock Element to <body>
+const body = document.getElementsByTagName("body")[0]
+let clockElement = document.createElement("span")
+clockElement.id = "clock"
+clockElement.classList.add("smallText")
+body.appendChild(clockElement)
+
 function clock() {
     let time = new Date();
     if(everySecond && time.getSeconds()===0){
@@ -17,7 +32,7 @@ function clock() {
     }
     let c = `&#1283${cN};` // final emoji code
 
-    document.getElementById("time").innerHTML = `${c+pad(h)}:${pad(m)}&nbsp`
+    clockElement.innerHTML = `${c+pad(h)}:${pad(m)}&nbsp`
 }
 let everySecond = true;
 const TickTock = setInterval(clock, 1000);

@@ -8,18 +8,7 @@ main {
     grid-template-rows: 70% 30%;
 }
 
-.smallText {
-    top: 0;
-    position: fixed;
-    background-color: #0005;
-}
-
-#time {
-    left: 0;
-    border-bottom-right-radius: .3em;
-}
-
-#winPercent {
+.smallText:not(#clock) {
     right: 0;
     border-bottom-left-radius: .3em
 }

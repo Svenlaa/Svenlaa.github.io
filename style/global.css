@@ -7,3 +7,9 @@ a.external::after {
 }
 
 * {text-transform: lowercase}
+
+.smallText {
+    top: 0;
+    position: fixed;
+    background-color: #0005;
+}
