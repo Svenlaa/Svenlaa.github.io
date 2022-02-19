@@ -89,7 +89,7 @@ header > * {
 .gridCell {
     background: gray no-repeat center;
     background-size: contain;
-    border: 0.5px solid black;
+    border: 1px solid black;
 }
 
 main {

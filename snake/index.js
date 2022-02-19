@@ -65,12 +65,12 @@ function inputRegister(k) {
     }
     let prevInput = input[input.length - 1]
     if (
-        prevInput == "right" && direction == "left" ||
-        prevInput == "left" && direction == "right" ||
-        prevInput == "up" && direction == "down" ||
-        prevInput == "down" && direction == "up" ||
-        !input[0] && direction == "left" || // special case for game init
-        prevInput == direction
+        prevInput === "right" && direction === "left" ||
+        prevInput === "left" && direction === "right" ||
+        prevInput === "up" && direction === "down" ||
+        prevInput === "down" && direction === "up" ||
+        !input[0] && direction === "left" || // special case for game init
+        prevInput === direction
     ) {
         return
     }
@@ -82,11 +82,10 @@ function inputRegister(k) {
 function drawSnake() {
     for (let o = 1; o <= snake.length; o++) {
         let cellStyle = getCellStyle(snake[o - 1])
-        if (o == 1) {
+        if (o === 1) {
             cellStyle.backgroundColor = 'rgb(34, 139, 34)';
-            continue
         } else if (o >= snake.length) {
-            if (cellStyle.backgroundColor != 'tomato') {
+            if (cellStyle.backgroundColor !== 'tomato') {
                 cellStyle.backgroundColor = null;
             } // if not tomato, is blank
         } else if (o > 1) {
@@ -97,13 +96,13 @@ function drawSnake() {
 
 function moveSnake() {
     let nextCell = null
-    if (input[0] == 'left') {
+    if (input[0] === 'left') {
         nextCell = [snake[0][0], snake[0][1] - 1]
-    } else if (input[0] == 'right') {
+    } else if (input[0] === 'right') {
         nextCell = [snake[0][0], snake[0][1] + 1]
-    } else if (input[0] == 'up') {
+    } else if (input[0] === 'up') {
         nextCell = [snake[0][0] - 1, snake[0][1]]
-    } else if (input[0] == 'down') {
+    } else if (input[0] === 'down') {
         nextCell = [snake[0][0] + 1, snake[0][1]]
     }
     if (!input[0]) {
@@ -116,11 +115,11 @@ function moveSnake() {
         gameOver();
         return
     } //Wall is hit
-    if (getCellStyle(nextCell, true) == 'rgb(39, 159, 39)') {
+    if (getCellStyle(nextCell, true) === 'rgb(39, 159, 39)') {
         gameOver();
         return
     } //Body is hit
-    getCellStyle(nextCell, true) != 'tomato' ? snake.pop() : spawnTomato();
+    getCellStyle(nextCell, true) !== 'tomato' ? snake.pop() : spawnTomato();
     snake.unshift(nextCell)
     drawSnake()
 }

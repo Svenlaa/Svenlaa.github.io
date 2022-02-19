@@ -13,7 +13,6 @@
     transition-timing-function: ease-out;
 }
 
-
 html, body {
     font-family: var(--mainfont), sans-serif;
     text-transform: lowercase;
@@ -23,7 +22,6 @@ html, body {
     height: 100vh;
     width: 100vw;
 }
-
 
 body {
     display: flex;
@@ -45,18 +43,18 @@ header {
     height: 1em;
     background-color: #00000069;
     padding: 0.25em 0;
-    color: whitesmoke;
+    color: #f5f5f5;
     top: 0;
 }
 
 header * {
-    color: whitesmoke;
+    color: #f5f5f5;
     flex: 100%;
     text-align: center;
 }
 
 header #time {
-    color: antiquewhite
+    color: #faebd7
 }
 
 main {
@@ -71,7 +69,7 @@ main {
     overflow-y: hidden;
 }
 
-#pile { /*PILE.CSS*/
+#pile {
     flex: 3;
     display: flex;
     flex-direction: row;
@@ -118,8 +116,6 @@ main {
 #pile #sUp li:nth-last-child(3) {
     width: 25%;
 }
-
-/*/ PILE.CSS*/
 
 #foundation {
     flex: 4;
@@ -199,7 +195,6 @@ img {
     filter: opacity(0.2);
 }
 
-
 #overlay {
     width: 100%;
     height: 100%;
@@ -220,10 +215,6 @@ img {
     text-align: center;
 }
 
-#overlay .grid span {
-    align-self: left;
-}
-
 footer {
     display: flex;
 }
@@ -234,9 +225,9 @@ footer * {
 }
 
 a {
-    color: lightskyblue
+    color: #87cefa
 }
 
 a:visited {
-    color: salmon
+    color: #fa8072
 }

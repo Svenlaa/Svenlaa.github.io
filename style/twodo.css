@@ -33,7 +33,7 @@ html, body {
 
 #topBar > *,
 #inputBar > * {
-    border-width: 0.5px;
+    border-width: 1px;
     border-style: solid;
     border-color: grey;
 }
@@ -96,10 +96,9 @@ li .deleteButton {
 
 .cButton {
     background-color: #fff;
-    margin: 0.5rem;
-    margin-right: 0;
+    margin: 0.5rem 0 0.5rem 0.5rem;
     height: 2rem;
-    padding: 0rem;
+    padding: 0;
     border-radius: 50%;
     border-style: hidden;
 }

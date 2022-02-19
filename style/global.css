@@ -5,9 +5,8 @@ body {
 }
 
 a.external::after {
-    background-image: url("/img/icon/external.png");
     background-size: contain;
-    background-repeat: no-repeat;
+    background: url("/img/icon/external.png") no-repeat;
     content: '__';
     color: #0000;
 }

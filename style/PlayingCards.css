@@ -5,11 +5,11 @@
 }
 
 .category.b, .card.b {
-    background-image: linear-gradient(to bottom right, hsl(240, 100%, 30%), hsl(240, 100%, 25%));
+    background-image: linear-gradient(to bottom right, #000099, #000080);
 }
 
 .category.g, .card.g {
-    background-image: linear-gradient(to bottom right, hsl(120, 100%, 25%), hsl(120, 100%, 19%));
+    background-image: linear-gradient(to bottom right, #008000, #006100);
 }
 
 .category.r, .card.b {
@@ -29,16 +29,14 @@
 }
 
 .card {
-    color: whitesmoke;
+    color: #f5f5f5;
     display: inline-block;
     font-size: 3.125em;
     font-family: var(--mainfont), sans-serif;
     text-align: center;
     border-radius: 0;
-    margin: 0em;
-    border-style: solid;
-    border-color: #00000069;
-    border-width: 0.05rem;
+    margin: 0;
+    border: 0.05rem solid #00000069;
     padding: 0.1em 0.3em;
 }
 
@@ -46,7 +44,6 @@
     display: flex;
     flex-wrap: wrap;
 }
-
 
 .category .card {
     flex: 1;
