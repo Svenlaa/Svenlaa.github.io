@@ -94,6 +94,13 @@ function drawSnake() {
     }
 }
 
+let buttonsVisible = true;
+
+function toggleControls() {
+    document.getElementsByClassName("controlWrapper")[0].style.display = buttonsVisible ? "none" : "inherit";
+    buttonsVisible = !buttonsVisible
+}
+
 function moveSnake() {
     let nextCell = null
     if (input[0] === 'left') {

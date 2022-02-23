@@ -11,6 +11,10 @@
     padding: 0;
 }
 
+.toggleButton {
+    position: absolute;
+}
+
 body {
     display: flex;
     height: 94vh;
@@ -29,7 +33,7 @@ body {
         width: 100%;
     }
 
-    #field {
+    #fieldContainer {
         width: 100%;
     }
 }
@@ -43,7 +47,7 @@ body {
         height: 100%;
     }
 
-    #field {
+    #fieldContainer {
         height: 100%;
     }
 }
@@ -63,9 +67,34 @@ main,
     grid-template-rows: repeat(3, calc(100% / 3));
 }
 
+#fieldContainer {
+    position: relative;
+    aspect-ratio: 1;
+    max-height: 94vmin;
+    max-width: 94vmin;
+}
+
+#eyeButton {
+    background-color: #0005;
+    position: absolute;
+    width: calc(5%);
+    height: calc(5%);
+    border-top-left-radius: 20%;
+    right: 0;
+    bottom: 0;
+}
+
+#eyeButton img {
+    width: 100%;
+    height: 100%;
+}
+
+
 #field {
     aspect-ratio: 1;
     display: grid;
+    width: 100%;
+    height: 100%;
     grid-template-columns: repeat(15, calc(100% / 15));
     grid-template-rows: repeat(15, calc(100% / 15));
 }

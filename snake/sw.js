@@ -42,4 +42,5 @@ const STATIC_CACHE_URLS = [
     "/snake/img/2b07.png",
     "/snake/img/2b06.png",
     "/snake/img/27a1.png",
+    "/snake/img/eye.png"
 ];
