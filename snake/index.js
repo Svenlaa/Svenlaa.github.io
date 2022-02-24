@@ -97,8 +97,8 @@ function drawSnake() {
 let buttonsVisible = true;
 
 function toggleControls() {
-    document.getElementsByClassName("controlWrapper")[0].style.display = buttonsVisible ? "none" : "inherit";
     buttonsVisible = !buttonsVisible
+    document.getElementsByClassName("controlWrapper")[0].style.display = buttonsVisible ? "inherit" : "none";
 }
 
 function moveSnake() {
