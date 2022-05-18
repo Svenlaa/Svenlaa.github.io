@@ -31,9 +31,7 @@ function cellClick(cellElement, isContextClick) {
     let cellIndex = [...cellElement.parentNode.children].indexOf(cellElement);
     if (!(classList.contains("show") || noMove)) {
         if (flagSelected || isContextClick) {
-            classList.contains("flag") ? swapFlag(classList, false) : swapFlag(classList, true);
-        } else if (classList.contains("flag")) {
-            swapFlag(classList, 0);
+            classList.toggle("flag")
         } else {
             if (classList.add("show"),
                 classList.add("o" + cellNumbers[cellIndex]),
@@ -51,12 +49,6 @@ function cellClick(cellElement, isContextClick) {
                 xCells * yCells - totalBombs == shownFields && finishGame("gold", "&#x1F601") :
                 finishGame("red", "&#x1F615");
         }
-    }
-
-    function swapFlag(classList, hasFlag) {
-        hasFlag ?
-            flagsID.innerHTML-- && classList.add("flag") :
-            flagsID.innerHTML++ && classList.remove("flag");
     }
 
     function finishGame(color, emoji) {
